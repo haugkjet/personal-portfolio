@@ -6,42 +6,42 @@ function SideBar() {
   return (
     <div className="w-1/6 h-auto bg-indigo-200">
       <div>
-        <div class="m-5 mt-8">
+        <div className="m-5 mt-8">
           <Link href="/">
             <div className="mx-3 text-gray-500 text-xm text-l font-bold">
               Home
             </div>
           </Link>
         </div>
-        <div class="m-5 mt-1">
+        <div className="m-5 mt-1">
           <Link href="/dashboard">
             <div className="mx-3 text-gray-500 text-xm text-l font-bold">
               Dashboard
             </div>
           </Link>
         </div>
-        <div class="m-5 mt-1">
+        <div className="m-5 mt-1">
           <Link href="/myPortfolio">
             <div className="mx-3 text-gray-500 text-xm text-l font-bold">
               My Portfolio
             </div>
           </Link>
         </div>
-        <div class="m-5 mt-1">
+        <div className="m-5 mt-1">
           <Link href="/assetTypes">
             <div className="mx-3 text-gray-500 text-xm text-l font-bold">
               Asset Locations
             </div>
           </Link>
         </div>
-        <div class="m-5 mt-1">
+        <div className="m-5 mt-1">
           <Link href="/assetLocation">
             <div className="mx-3 text-gray-500 text-xm text-l font-bold">
               Asset Locations
             </div>
           </Link>
         </div>
-        <div class="m-5 mt-1">
+        <div className="m-5 mt-1">
           <Link href="/assetNames">
             <div className="mx-3 text-gray-500 text-xm text-l font-bold">
               Asset Names
