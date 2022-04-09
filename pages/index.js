@@ -1,44 +1,31 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import PriceTracker from './components/PriceTracker'
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
-
-  async function fetchCryptoData() {
-    console.log("Fetching crypto data");
-    
-  const response = await fetch ('https://api.coinbase.com/v2/prices/BTC-NOK/spot');
-  const data = await response.json(response);
-
-  console.log(data);
-  return data;
-
-  }
-
-  let mydata =  fetchCryptoData();
-  console.log(mydata);
-
-  
-  
-
-
-
-  const pricesToTrack = [
-    {ticker : 'BTC', price: '25609.9', lastUpdate : new Date (2020,2,3)},
-    {ticker : 'ETH', price: '3609.9', lastUpdate :  new Date (2020,2,3)},
-    {ticker : 'ADA', price: '100.9', lastUpdate :  new Date (2020,2,3)},
-    {ticker : 'SOL', price: '229.9', lastUpdate :  new Date (2020,2,3)}
-  ];
-
   return (
-
-  <div>
-    <h1 className="text-3xl text-green-500 font-bold" >Welcome to NextJS test</h1> 
-    <PriceTracker ticker={pricesToTrack[0].ticker} price={pricesToTrack[0].price} lastUpdate={pricesToTrack[0].lastUpdate.toISOString()}></PriceTracker>
-    <PriceTracker ticker={pricesToTrack[1].ticker} price={pricesToTrack[1].price} lastUpdate={pricesToTrack[1].lastUpdate.toISOString()}></PriceTracker>
-    <PriceTracker ticker={pricesToTrack[2].ticker} price={pricesToTrack[2].price} lastUpdate={pricesToTrack[2].lastUpdate.toISOString()}></PriceTracker>
-    <PriceTracker ticker={pricesToTrack[3].ticker} price={pricesToTrack[3].price} lastUpdate={pricesToTrack[3].lastUpdate.toISOString()}></PriceTracker>
-  </div>
-
-  )};
+    <div>
+      <h1 className="text-3xl text-green-500 font-bold">
+        Welcome to Personal Portfolio
+      </h1>
+      <ul>
+        <li>
+          <Link href="/dashboard">Dashboard</Link>
+        </li>
+        <li>
+          <Link href="/assetTypes">AssetTypes</Link>
+        </li>
+        <li>
+          <Link href="/assetLocation">AssetLocation</Link>
+        </li>
+        <li>
+          <Link href="/assetNames">AssetName</Link>
+        </li>
+        <li>
+          <Link href="/myPortfolio">My Portfolio</Link>
+        </li>
+      </ul>
+    </div>
+  );
+}
