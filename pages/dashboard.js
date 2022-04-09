@@ -1,5 +1,12 @@
 import styles from "../styles/Home.module.css";
-import PriceTracker from "./components/PriceTracker";
+import PriceTracker from "../components/PriceTracker";
+
+import PriceTrackerList from "../components/PriceTrackerList";
+
+import TopBar from "../components/TopBar";
+import SideBar from "../components/SideBar";
+
+import Footer from "../components/Footer";
 
 export default function dashboard() {
   async function fetchCryptoData() {
@@ -26,27 +33,15 @@ export default function dashboard() {
 
   return (
     <div>
-      <h1 className="text-3xl text-green-500 font-bold">Dashboard</h1>
-      <PriceTracker
-        ticker={pricesToTrack[0].ticker}
-        price={pricesToTrack[0].price}
-        lastUpdate={pricesToTrack[0].lastUpdate.toISOString()}
-      ></PriceTracker>
-      <PriceTracker
-        ticker={pricesToTrack[1].ticker}
-        price={pricesToTrack[1].price}
-        lastUpdate={pricesToTrack[1].lastUpdate.toISOString()}
-      ></PriceTracker>
-      <PriceTracker
-        ticker={pricesToTrack[2].ticker}
-        price={pricesToTrack[2].price}
-        lastUpdate={pricesToTrack[2].lastUpdate.toISOString()}
-      ></PriceTracker>
-      <PriceTracker
-        ticker={pricesToTrack[3].ticker}
-        price={pricesToTrack[3].price}
-        lastUpdate={pricesToTrack[3].lastUpdate.toISOString()}
-      ></PriceTracker>
+      <TopBar></TopBar>
+      <div className="flex">
+        <SideBar></SideBar>
+        <div className="w-3/4">
+          <h1 className="text-3xl text-green-500 font-bold">Dashboard</h1>
+          <PriceTrackerList></PriceTrackerList>
+        </div>
+      </div>
+      <Footer></Footer>
     </div>
   );
 }
