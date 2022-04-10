@@ -1,10 +1,12 @@
+import { Fragment } from "react";
+
 import TopBar from "../components/TopBar";
 import SideBar from "../components/SideBar";
 
 import Footer from "../components/Footer";
 export default function assetNames() {
   return (
-    <div>
+    <Fragment>
       <TopBar></TopBar>
       <div className="flex">
         <SideBar></SideBar>
@@ -13,6 +15,6 @@ export default function assetNames() {
         </div>
       </div>
       <Footer></Footer>
-    </div>
+    </Fragment>
   );
 }

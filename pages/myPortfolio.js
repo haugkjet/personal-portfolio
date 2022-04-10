@@ -2,9 +2,11 @@ import TopBar from "../components/TopBar";
 import SideBar from "../components/SideBar";
 import Footer from "../components/Footer";
 
+import { Fragment } from "react";
+
 export default function myPortfolio() {
   return (
-    <div>
+    <Fragment>
       <TopBar></TopBar>
       <div className="flex">
         <SideBar></SideBar>
@@ -13,6 +15,6 @@ export default function myPortfolio() {
         </div>
       </div>
       <Footer></Footer>
-    </div>
+    </Fragment>
   );
 }

@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import TopBar from "../components/TopBar";
 import SideBar from "../components/SideBar";
 
@@ -5,7 +7,7 @@ import Footer from "../components/Footer";
 
 export default function assetLocation() {
   return (
-    <div>
+    <Fragment>
       <TopBar></TopBar>
       <div className="flex">
         <SideBar></SideBar>
@@ -14,6 +16,6 @@ export default function assetLocation() {
         </div>
       </div>
       <Footer></Footer>
-    </div>
+    </Fragment>
   );
 }

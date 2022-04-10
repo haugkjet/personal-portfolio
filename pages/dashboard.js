@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import styles from "../styles/Home.module.css";
 import PriceTracker from "../components/PriceTracker";
 
@@ -32,7 +34,7 @@ export default function dashboard() {
   ];
 
   return (
-    <div>
+    <Fragment>
       <TopBar></TopBar>
       <div className="flex">
         <SideBar></SideBar>
@@ -42,6 +44,6 @@ export default function dashboard() {
         </div>
       </div>
       <Footer></Footer>
-    </div>
+    </Fragment>
   );
 }
