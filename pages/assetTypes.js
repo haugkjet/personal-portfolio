@@ -35,14 +35,15 @@ export default function fetchAssetTypes(props) {
           >
             Get AssetTypes
           </button>
-          {/*<div>
-            {assetTypes.map(function (d, idx) {
-              return <li key={idx}>{d.name}</li>;
-            })}
-          </div>
-
-          <div>{console.log(assetTypes)}</div>
-        */}
+          {assetTypes === undefined ? (
+            <div></div>
+          ) : (
+            <ul>
+              {assetTypes.map(function (d, idx) {
+                return <li key={idx}>{d.name}</li>;
+              })}
+            </ul>
+          )}
         </div>
       </div>
       <Footer></Footer>
