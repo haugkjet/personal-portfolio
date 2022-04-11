@@ -35,7 +35,7 @@ function SideBar() {
           </Link>
         </div>
         <div className="m-5 mt-1">
-          <Link href="/assetLocation">
+          <Link href="/assetLocations">
             <div className="mx-3 text-gray-500 text-xm text-l font-bold">
               Asset Locations
             </div>
