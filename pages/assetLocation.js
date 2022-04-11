@@ -5,7 +5,7 @@ import SideBar from "../components/SideBar";
 
 import Footer from "../components/Footer";
 
-export default function assetLocation() {
+export default function FetchassetLocations() {
   return (
     <Fragment>
       <TopBar></TopBar>

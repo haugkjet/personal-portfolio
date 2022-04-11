@@ -4,7 +4,7 @@ import TopBar from "../components/TopBar";
 import SideBar from "../components/SideBar";
 import Footer from "../components/Footer";
 
-export default function fetchAssetNames(props) {
+export default function FetchAssetNames(props) {
   const [assetNames, setAssetNames] = useState(props.assetNames);
 
   async function fetchAssetNameData() {

@@ -4,7 +4,7 @@ import TopBar from "../components/TopBar";
 import SideBar from "../components/SideBar";
 import Footer from "../components/Footer";
 
-export default function fetchAssetTypes(props) {
+export default function FetchAssetTypes(props) {
   const [assetTypes, setAssetTypes] = useState(props.assetTypes);
 
   async function fetchAssetTypeData() {
