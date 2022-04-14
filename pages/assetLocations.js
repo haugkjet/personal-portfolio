@@ -17,6 +17,8 @@ export default function FetchassetLocations(props) {
     const res = await data;
 
     setAssetLocations(data.assetLocations);
+
+    console.log(data.assetLocations);
     return res;
   }
 
@@ -40,11 +42,11 @@ export default function FetchassetLocations(props) {
           {assetLocations === undefined ? (
             <div></div>
           ) : (
-            <ul>
-              {assetLocations.map(function (d, idx) {
-                return <li key={idx}>{d.name}</li>;
-              })}
-            </ul>
+            <div>
+              {assetLocations.map((assetLocations) => (
+                <div key="_id">{assetLocations.name}</div>
+              ))}
+            </div>
           )}
         </div>
       </div>
