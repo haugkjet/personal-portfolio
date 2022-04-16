@@ -19,11 +19,6 @@ export default async function handler(req, res) {
         .toArray()
         .then(console.log(documents));
 
-      documents[0]._id = documents[0]._id.toString();
-      documents[1]._id = documents[1]._id.toString();
-      documents[2]._id = documents[2]._id.toString();
-      documents[3]._id = documents[3]._id.toString();
-
       console.log(documents);
     });
 
@@ -33,7 +28,7 @@ export default async function handler(req, res) {
   } finally {
     await client.close();
     res.status(200).json({
-      assetLocations: [{ assetLocations: documents }],
+      assetLocations: documents,
     });
   }
 }
