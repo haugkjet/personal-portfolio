@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 
 import TopBar from "../components/TopBar";
 import SideBar from "../components/SideBar";
@@ -22,9 +22,10 @@ export default function FetchassetLocations(props) {
     return res;
   }
 
-  const clickHandler = () => {
+  useEffect(() => {
+    // Update the document title using the browser API
     fetchAssetLocationsData();
-  };
+  }, []);
 
   return (
     <Fragment>
@@ -33,12 +34,7 @@ export default function FetchassetLocations(props) {
         <SideBar></SideBar>
         <div className="w-3/4">
           <h1 className="text-3xl text-green-500 font-bold">Asset Names</h1>
-          <button
-            onClick={clickHandler}
-            className="bg-blue-500 hover:bg-blue-700 text-sm text-white font-bold py-1 px-1 border border-blue-700 rounded w-1/4"
-          >
-            Get Asset Locations
-          </button>
+
           {assetLocations === undefined ? (
             <div></div>
           ) : (
