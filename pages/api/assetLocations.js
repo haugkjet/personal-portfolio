@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 
 export default async function handler(req, res) {
-  const uri = "DB";
+  const uri = process.env.DATABASE_URL;
 
   const client = new MongoClient(uri);
   let documents = [];
