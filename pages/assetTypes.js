@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 
 import TopBar from "../components/TopBar";
 import SideBar from "../components/SideBar";
@@ -8,8 +8,6 @@ export default function FetchAssetTypes(props) {
   const [assetTypes, setAssetTypes] = useState(props.assetTypes);
 
   async function fetchAssetTypeData() {
-    console.log(`Fetching AssetTypes`);
-
     const req = `/api/assetTypes`;
     const response = await fetch(req);
     const data = await response.json(response);
@@ -19,9 +17,11 @@ export default function FetchAssetTypes(props) {
     return res;
   }
 
-  const clickHandler = () => {
+  useEffect(() => {
+    // Update the document title using the browser API
     fetchAssetTypeData();
-  };
+  }, []);
+
   return (
     <Fragment>
       <TopBar></TopBar>
@@ -29,20 +29,15 @@ export default function FetchAssetTypes(props) {
         <SideBar></SideBar>
         <div className="w-3/4">
           <h1 className="text-3xl text-green-500 font-bold">Asset Types</h1>
-          <button
-            onClick={clickHandler}
-            className="bg-blue-500 hover:bg-blue-700 text-sm text-white font-bold py-1 px-1 border border-blue-700 rounded w-1/4"
-          >
-            Get AssetTypes
-          </button>
+
           {assetTypes === undefined ? (
             <div></div>
           ) : (
-            <ul>
-              {assetTypes.map(function (d, idx) {
-                return <li key={idx}>{d.name}</li>;
-              })}
-            </ul>
+            <div>
+              {assetTypes.map((assetTypes) => (
+                <div key="_id">{assetTypes.name}</div>
+              ))}
+            </div>
           )}
         </div>
       </div>

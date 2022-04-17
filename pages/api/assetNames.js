@@ -1,12 +1,34 @@
-export default function handler(req, res) {
-  res.status(200).json({
-    assetNames: [
-      { id: "1", name: "BTC" },
-      { id: "2", name: "ETH" },
-      { id: "3", name: "SOL" },
-      { id: "4", name: "ADA" },
-      { id: "5", name: "XRM" },
-      { id: "6", name: "USDT" },
-    ],
-  });
+import { MongoClient } from "mongodb";
+
+export default async function handler(req, res) {
+  const uri = process.env.DATABASE_URL;
+
+  const client = new MongoClient(uri);
+  let documents = [];
+
+  try {
+    // Connect to the MongoDB cluster
+    await client.connect().then(async (client) => {
+      const db = client.db();
+      console.log(db.databaseName);
+
+      documents = await client
+        .db()
+        .collection("assetNames")
+        .find()
+        .toArray()
+        .then(console.log(documents));
+
+      console.log(documents);
+    });
+
+    // Make the appropriate DB calls
+  } catch (e) {
+    console.error(e);
+  } finally {
+    await client.close();
+    res.status(200).json({
+      assetNames: documents,
+    });
+  }
 }
