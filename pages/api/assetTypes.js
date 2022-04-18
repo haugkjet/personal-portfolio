@@ -11,12 +11,7 @@ export default async function handler(req, res) {
     await client.connect().then(async (client) => {
       const db = client.db();
 
-      documents = await client
-        .db()
-        .collection("assetTypes")
-        .find()
-        .toArray()
-        .then(console.log(documents));
+      documents = await client.db().collection("assetTypes").find().toArray();
     });
 
     // Make the appropriate DB calls

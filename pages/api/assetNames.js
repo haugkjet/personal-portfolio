@@ -10,16 +10,8 @@ export default async function handler(req, res) {
     // Connect to the MongoDB cluster
     await client.connect().then(async (client) => {
       const db = client.db();
-      console.log(db.databaseName);
 
-      documents = await client
-        .db()
-        .collection("assetNames")
-        .find()
-        .toArray()
-        .then(console.log(documents));
-
-      console.log(documents);
+      documents = await client.db().collection("assetNames").find().toArray();
     });
 
     // Make the appropriate DB calls
