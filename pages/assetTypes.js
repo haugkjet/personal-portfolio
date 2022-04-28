@@ -27,15 +27,17 @@ export default function FetchAssetTypes(props) {
       <TopBar></TopBar>
       <div className="flex">
         <SideBar></SideBar>
-        <div className="w-3/4">
-          <h1 className="text-3xl text-green-500 font-bold">Asset Types</h1>
+        <div className="w-screen bg-slate-800">
+          <h1 className="text-3xl text-slate-200 font-bold">Asset Types</h1>
 
           {assetTypes === undefined ? (
             <div></div>
           ) : (
             <div>
               {assetTypes.map((assetTypes) => (
-                <div key="_id">{assetTypes.name}</div>
+                <div className="text-white" key="_id">
+                  {assetTypes.name}
+                </div>
               ))}
             </div>
           )}
